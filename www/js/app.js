@@ -1,10 +1,10 @@
+(function(){
 // Ionic Starter App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var app = angular.module('starter', ['ionic']);
-
+var app = angular.module('reddit', ['ionic']);
 
 app.controller('redditCtrl', function($http, $scope){
   $http.get('https://www.reddit.com/.json')
@@ -19,7 +19,19 @@ app.controller('redditCtrl', function($http, $scope){
   });
 });
 
+app.config(function($stateProvider, $urlRouterProvider){
+    $stateProvider.state('list',  {
+      url:'/list', 
+      templateUrl:'templates/list.html'
+    });
 
+    $stateProvider.state('details',  {
+    url:'/details', 
+    templateUrl:'templates/details.html'
+  });
+
+  $urlRouterProvider.otherwise('/list');
+});
 
 
 
@@ -43,3 +55,4 @@ app.run(function($ionicPlatform) {
     }
   });
 })
+}());

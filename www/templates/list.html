@@ -1,0 +1,15 @@
+<ion-view view-title='Reddits'>
+
+  <ion-content  ng-controller='redditCtrl'>
+    <div class="list">
+      <a href='{{reddit.url}}' target="_" class="item item-thumbnail-left" ng-repeat='reddit in reddits'>
+        <img ng-if='reddit.thumbnail.length>4' src="{{reddit.thumbnail}}" alt="">
+
+        <img ng-if='reddit.thumbnail.length<=4' src="http://www.mr-mojo-risin.net/wp-content/uploads/2010/11/icon_reddit_01.png" alt="reddit logo">
+        <h2>{{reddit.title}}</h2>
+        <p>{{reddit.domain}}</p>
+      </a>
+    </div>
+  </ion-content>
+
+</ion-view>
