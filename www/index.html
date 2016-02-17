@@ -31,9 +31,10 @@
 
       <ion-content  ng-controller='redditCtrl'>
         <div class="list">
-          <a class="item" ng-repeat='reddit in reddits'>
+          <a class="item item-thumbnail-left" ng-repeat='reddit in reddits'>
             <img src="{{reddit.thumbnail}}" alt="">
-
+            <h2>{{reddit.title}}</h2>
+            <p>{{reddit.domain}}</p>
           </a>
         </div>
       </ion-content>
