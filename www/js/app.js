@@ -19,6 +19,11 @@ app.controller('redditCtrl', function($http, $scope){
   });
 });
 
+app.controller('detailsCtrl', function($scope, $state){
+  var url = $state.params.url;
+  $scope.url = url;
+});
+
 app.config(function($stateProvider, $urlRouterProvider){
     $stateProvider.state('list',  {
       url:'/list', 
@@ -26,7 +31,7 @@ app.config(function($stateProvider, $urlRouterProvider){
     });
 
     $stateProvider.state('details',  {
-    url:'/details', 
+    url:'/details/:url', 
     templateUrl:'templates/details.html'
   });
 
